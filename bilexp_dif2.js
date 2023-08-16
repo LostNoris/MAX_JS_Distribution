@@ -27,8 +27,9 @@ function bang() {
 			u = 0.99;
 		}
 
-		u *= 2.;
-
+/* This version of the bilexp file has a single line of code removed
+for differing behaviour, simply removing (u *= 2.;) from this section of the file.  
+*/
 		if (u > 1) {
 			u = 2 - u;
 			u = -1 * Math.log(u);

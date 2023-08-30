@@ -58,7 +58,7 @@ function bang() {
             currentIndex = (currentIndex + 1) % values.length;
         } /* Carry out Bernoulli trials until failures reaches r
             Output the total number of successful trials 
-            use the variable u from the recieved array of values to carry out trial*/
+            use the variable u from the received array of values to carry out trial*/
         
         output.push(x);
     }

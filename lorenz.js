@@ -1,3 +1,5 @@
+/* A more or less direct translation of C code from Algosome Blog,
+   formatted to work within Max, see references in commentary */
 inlets = 3;
 outlets = 3;
 

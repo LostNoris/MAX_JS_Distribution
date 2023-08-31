@@ -5,13 +5,14 @@ var values = [];
 var p = 0.5; 
 var r = 3; 
 var seqLength = 10; 
+/* Set some default values for the object so that it automatically
+   profuces a viable sequence of data */
 
 function anything() {
     if (inlet === 0) {
-        // Assign the received array to the values
         values = arrayfromargs(messagename, arguments);
     }
-}
+} // Assign the received array to the values
 
 function msg_float(value) {
     if (inlet === 1) { 
@@ -22,14 +23,14 @@ function msg_float(value) {
         } else {
             p = value;
         }
-    } // Assign value to p and bound the variable between 0.01 and 0.89
-}
+    } 
+} // Assign value to p and bound the variable between 0.01 and 0.89
 
 function msg_int(value) {
     if (inlet === 2) {
             r = value; 
-        } /* Assign value to r
- r is the total number of failed Bernoulli trails allowed before output */
+        } /* Assign value to r, r is the total 
+          number of failed Bernoulli trails allowed before output */
     else if (inlet === 3) {
         seqLength = value;
     } // Assign vale to seqLength to define length of output sequence

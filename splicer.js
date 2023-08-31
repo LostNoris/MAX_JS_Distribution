@@ -16,5 +16,5 @@ function bang() {
 	
 outlet (0, seq);
 }
-	
-	
+/* This object takes an array and replaces the element at [index] with 
+   a random number. It is used in the PatternChanger Max patch */

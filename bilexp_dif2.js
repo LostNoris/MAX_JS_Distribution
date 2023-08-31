@@ -1,3 +1,7 @@
+/* Program for trandforming array of numbers between 0. and 1. into an
+   array displaying the bilateral exponential ditribution, mathematical functions
+   taken from 'Computer Music in C' pp 184. This version of the object has had 
+   a single line of code removed, changing the behaviour of the object dramatically*/
 inlets = 2;
 outlets = 1;
 
@@ -6,15 +10,14 @@ values = [];
 
 function anything() {
 	if (inlet === 0) {
-		// Assign the received array to the 'values' array
 		values = arrayfromargs(messagename, arguments);
-	}
+	} // Assign the received array to the values array
 }
 
 function msg_float(value) {
 	if (inlet === 1) { 
          spread = value; 
-    }
+    } // Assign inlet 1 value to the variable spread
 }
 
 function bang() {
@@ -25,11 +28,11 @@ function bang() {
 			u = 0.01;
 		} else if (u > 0.99) {
 			u = 0.99;
-		}
+		} // Ensure that the value of u is between 0.01 and 0.99
 
-/* This version of the bilexp file has a single line of code removed
-for differing behaviour, simply removing (u *= 2.;) from this section of the file.  
-*/
+/* (u *= 2.;) This line has been removed from the code, drastically 
+   altering the effect on the output */
+
 		if (u > 1) {
 			u = 2 - u;
 			u = -1 * Math.log(u);
@@ -37,9 +40,11 @@ for differing behaviour, simply removing (u *= 2.;) from this section of the fil
 		} else {
 			u = Math.log(u);
 			u = u / spread;
-		}
+		} 
 		values[i] = u;
-	}
-
+	} /* interate through values array 
+	If the new value of u is greater than 1, finding the negative log of (2 - u)
+    and divide by spread.
+	If the value is less than 1, find the log and divide by spread. */	
 	outlet(0, values);
 }
